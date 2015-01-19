@@ -105,3 +105,5 @@ ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviou
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
 Test
+
+Test just with R Studio
