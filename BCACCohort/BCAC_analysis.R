@@ -103,3 +103,5 @@ sum(data$Behaviour2 %in% c(1, 2))
 ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviour2))) +
   geom_bar(as.table = TRUE) + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
+
+Test
