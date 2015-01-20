@@ -1,5 +1,5 @@
 # Getting the packages we need
- install.packages("memisc", dependencies = TRUE)
+#install.packages("memisc", dependencies = TRUE)
 
 library(Hmisc) # Hmisc could give us access to the database in theory, but I used RODBC
 library(RODBC)      # Interaction with .sdb file
@@ -11,25 +11,19 @@ library(scales)
 setwd("~/Data") # To set it to where the database is
 
 # Importing the Access database into R so we can use it
-d       <- file.path('BCAC_14012015.mdb')     # This is telling it what the path to the file is
-channel <- odbcConnectAccess2007(d)           # This function tells it how to access it
-data    <- sqlFetch(channel, "BCAC_CaseData", na.strings = c("888", "NA")) # This gets the table from the database
-data    <- data.table(data)
-setkey(data, uniqueID)
+data <- fromAccess('BCAC_14012015.mdb', "BCAC_CaseData", c("888", "NA"), uniqueID)
+
 data[data == 888] <- NA
 
 data_test[, 2:20 := lapply(.SD, as.factor), .SDcols = 2:20]
-head(data_test[, 2:20, with = FALSE])
+
+data_test[, c(21:23, 33:37) := lapply(.SD, as.factor), .SDcols = c(21:23, 33:37)]
+data_test[, c(27:32) := lapply(.SD, as.ordered), .SDcols = 27:32]
 data <- data_test
 
-
-summary(data_test[, 21:40, with = FALSE])
-data_test[, c(21:23, ) := lapply(.SD, as.factor), .SDcols = 21:40]
-data_test[, c(27:29, ) := lapply(.SD, as.ordered), .SDcols = 21:40]
-
-
-
-data_test <- data
+summary(data_test[, 41:60, with = FALSE])
+data_test[, c() := lapply(.SD, as.factor), .SDcols = c()]
+data_test[, c() := lapply(.SD, as.ordered), .SDcols = c()]
 
 
 
