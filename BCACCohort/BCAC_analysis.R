@@ -11,27 +11,12 @@ library(scales)
 setwd("~/Data") # To set it to where the database is
 
 # Importing the Access database into R so we can use it
-data <- fromAccess('BCAC_14012015.mdb', "BCAC_CaseData", c("888", "NA"), uniqueID)
+data <- fromAccess('BCAC_14012015.mdb', "BCAC_CaseData", c("888", "NA"), "uniqueID")
 
-data[data == 888] <- NA
+saveRDS(data, "working.data.table.RData")
+rm(list = ls())
+data <- readRDS("working.data.table.Rdata")
 
-data_test[, 2:20 := lapply(.SD, as.factor), .SDcols = 2:20]
-
-data_test[, c(21:23, 33:37) := lapply(.SD, as.factor), .SDcols = c(21:23, 33:37)]
-data_test[, c(27:32) := lapply(.SD, as.ordered), .SDcols = 27:32]
-data <- data_test
-
-summary(data_test[, 41:60, with = FALSE])
-data_test[, c() := lapply(.SD, as.factor), .SDcols = c()]
-data_test[, c() := lapply(.SD, as.ordered), .SDcols = c()]
-
-
-
-
-summary(data_test)
-summary(data[, 1:20, with = FALSE])
-data[, 2:20] <- sapply(data[, 2:20], as.factor)
-warnings()
 ################### Getting summary statistics #####################
 summary(data) 
 summary(data$uniqueID)
@@ -119,3 +104,11 @@ ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviou
 sum(is.na(data))
 sum(!is.na(data))
 data$YearsToRelapse
+
+###### Looking at completeness #######
+### Data must be in data.table format ###
+
+
+data_test[, sum(!is.na(ER_status1)) / (sum(!is.na(ER_status1)) + sum(is.na(ER_status1))), by = study]
+
+

@@ -3,7 +3,7 @@ fromAccess <- function (file_path, database_name, na_strings, datatable_key) {
   channel <- odbcConnectAccess2007(d)           # This function tells it how to access it
   data    <- sqlFetch(channel, database_name, na.strings = na_strings ) # This gets the table from the database
   data    <- data.table(data)
-  setkey(data, datatable_key)
-  
+  setkeyv(data, datatable_key)
+    
   data
 }
