@@ -1,5 +1,5 @@
 # Getting the packages we need
-# install.packages("RODBC", dependencies = TRUE)
+ install.packages("memisc", dependencies = TRUE)
 
 library(Hmisc) # Hmisc could give us access to the database in theory, but I used RODBC
 library(RODBC)      # Interaction with .sdb file
@@ -7,6 +7,7 @@ library(data.table) # Could be faster than ordinary dataframes
 library(ggplot2)    # For graphs
 library(scales)
 
+ 
 setwd("~/Data") # To set it to where the database is
 
 # Importing the Access database into R so we can use it
@@ -15,7 +16,28 @@ channel <- odbcConnectAccess2007(d)           # This function tells it how to ac
 data    <- sqlFetch(channel, "BCAC_CaseData", na.strings = c("888", "NA")) # This gets the table from the database
 data    <- data.table(data)
 setkey(data, uniqueID)
+data[data == 888] <- NA
 
+data_test[, 2:20 := lapply(.SD, as.factor), .SDcols = 2:20]
+head(data_test[, 2:20, with = FALSE])
+data <- data_test
+
+
+summary(data_test[, 21:40, with = FALSE])
+data_test[, c(21:23, ) := lapply(.SD, as.factor), .SDcols = 21:40]
+data_test[, c(27:29, ) := lapply(.SD, as.ordered), .SDcols = 21:40]
+
+
+
+data_test <- data
+
+
+
+
+summary(data_test)
+summary(data[, 1:20, with = FALSE])
+data[, 2:20] <- sapply(data[, 2:20], as.factor)
+warnings()
 ################### Getting summary statistics #####################
 summary(data) 
 summary(data$uniqueID)
@@ -100,7 +122,6 @@ ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviou
   geom_bar(as.table = TRUE) + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
-
-Test test test
-
-test R studio3
+sum(is.na(data))
+sum(!is.na(data))
+data$YearsToRelapse
