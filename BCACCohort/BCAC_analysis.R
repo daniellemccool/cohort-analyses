@@ -12,7 +12,7 @@ setwd("~/Data") # To set it to where the database is
 # Importing the Access database into R so we can use it
 d       <- file.path('BCAC_14012015.mdb')     # This is telling it what the path to the file is
 channel <- odbcConnectAccess2007(d)           # This function tells it how to access it
-data    <- sqlFetch(channel, "BCAC_CaseData") # This gets the table from the database
+data    <- sqlFetch(channel, "BCAC_CaseData", na.strings = c("888", "NA")) # This gets the table from the database
 data    <- data.table(data)
 setkey(data, uniqueID)
 
@@ -73,13 +73,9 @@ cbc_part[cbc_part$study %in% c("ABCS", "CGPS", "SEARCH", "SEBCS", "LMBC", "BBCC"
 qplot(cbc_part$study, fill = factor(cbc_part$Index_corr)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-qplot(cbc_part$study, fill = factor(cbc_part$Behaviour2)) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  facet_grid(. ~ bigstudy, scales = "free_x")
+cbc_part_cond <- cbc_part[, c(2, 4, 6, 177), with = FALSE]
 
-cbc_part_cond <- cbc_part[, c(2, 4, 6, 177), with = FALSE ]
-
-ggplot(data = cbc_part_cond, aes(x = study, fill = factor(Behaviour2))) +
+ggplot(data = cbc_part_cond, aes(x = factor(study), fill = factor(Behaviour2))) +
   geom_bar() + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + 
   facet_wrap( ~ bigstudy, scales = "free", shrink = TRUE)
@@ -104,6 +100,4 @@ ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviou
   geom_bar(as.table = TRUE) + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
-Test
 
-Test just with R Studio
