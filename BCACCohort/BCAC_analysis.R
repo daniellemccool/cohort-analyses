@@ -15,7 +15,7 @@ data <- fromAccess('BCAC_14012015.mdb', "BCAC_CaseData", c("888", "NA"), "unique
 
 saveRDS(data, "working.data.table.RData")
 rm(list = ls())
-data <- readRDS("working.data.table.Rdata")
+data <- data.table(readRDS("working.data.table.Rdata"))
 
 ################### Getting summary statistics #####################
 summary(data) 
