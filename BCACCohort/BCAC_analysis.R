@@ -6,16 +6,42 @@ library(RODBC)      # Interaction with .sdb file
 library(data.table) # Could be faster than ordinary dataframes
 library(ggplot2)    # For graphs
 library(scales)
-
- 
+#library(memisc) # Superseded by codebooks package
+library(nnet)
+install.packages("mtable")
+install.packages("mtable", repos="http://R-Forge.R-project.org", dependencies = TRUE)
+library(codebooks)
+detach("package:codebooks")
+library(memisc)
+install.packages("codebooks", "")
+detach("package:memisc")
+summary(data)
 setwd("~/Data") # To set it to where the database is
+data[, sum(Bilateral == 2, na.rm = TRUE), by = study]
 
-# Importing the Access database into R so we can use it
-data <- fromAccess('BCAC_14012015.mdb', "BCAC_CaseData", c("888", "NA"), "uniqueID")
+?memisc
 
-saveRDS(data, "working.data.table.RData")
-rm(list = ls())
+# In order to keep all of the things I've done, I leave this part in to show how
+# the data was imported from Access originally. In order to reduce the time it
+# takes to load the file and do all the changes, the current working data.table
+# object is actually loaded from the .RData file. 
+
+# Importing the Access database
+# into R so we can use it 
+ data <- FromAccess('BCAC_14012015.mdb', "BCAC_CaseData", c("888", "NA"), "uniqueID")
+
+# data <- SetNAs(data, c(888, "8008-08-08"))
+data <- SetToNA(data)
+data <- SetClassData(data)
+
+
+summary(data)
+
+# saveRDS(data, "working.data.table.RData")
+
 data <- data.table(readRDS("working.data.table.Rdata"))
+
+
 
 ################### Getting summary statistics #####################
 summary(data) 
@@ -67,7 +93,7 @@ qplot(cbc_part$study, fill = factor(cbc_part$Behaviour2)) +
 # We can also go at it a different way, using Behavior
 
 studies_w_bh2 <- levels(droplevels(data[data$Behaviour2 %in% c(1, 2), ])$study)
-cbc_part <- data[data$study %in% studies_w_ind2, ]
+cbc_part <- data[data$study %in% studies_w_bh2, ]
 cbc_part$bigstudy <- 0
 cbc_part[cbc_part$study %in% c("ABCS", "CGPS", "SEARCH", "SEBCS", "LMBC", "BBCC", "BBCS"), "bigstudy"] = 1
 
@@ -101,6 +127,9 @@ ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviou
   geom_bar(as.table = TRUE) + 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 
+
+data[, sum(Bilateral == 1, na.rm = TRUE), by = study ]
+
 sum(is.na(data))
 sum(!is.na(data))
 data$YearsToRelapse
@@ -110,5 +139,4 @@ data$YearsToRelapse
 
 
 data_test[, sum(!is.na(ER_status1)) / (sum(!is.na(ER_status1)) + sum(is.na(ER_status1))), by = study]
-
 

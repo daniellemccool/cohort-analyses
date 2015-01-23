@@ -1,8 +1,17 @@
+# SetNAs <- function(data, missing){
+#   for(i in missing){
+#     data[data == i] <- NA
+#   }
+# }
 
-data[data == 888] <- NA
-data[data == "8000-08-08"] <- NA
+SetToNA = function(data){
+  for (i in names(data)){
+    data[get(i) == "8000-08-08", i:=NA, with = FALSE]
+    data[get(i) == 888, i:=NA, with = FALSE]
+  }
+  data
+}
 
-data_test <- data
 
 # This is how the col names for factors and ordered variables were originally
 # generated, however in order to preserve the integrity of the data for the
@@ -21,16 +30,62 @@ data_test <- data
 # o_colnames <- colnames(data_test[, eval(factor_cols), with = FALSE])
 # saveRDS(o_colnames, "o_colnames.RData")
 
+SetClassData <- function(data){
+  setwd("~/RScripts") # To set it to where the names are stored
+  f_colnames <- quote(readRDS("f_colnames.RData"))
+  o_colnames <- quote(readRDS("o_colnames.RData"))
+  
+  data[, eval(f_colnames) := lapply(.SD, as.factor), .SDcols = eval(f_colnames)]
+  data[, eval(o_colnames) := lapply(.SD, as.ordered), .SDcols = eval(o_colnames)]
+  
+  data
+  
+}
+data[, 1:176 := lapply(.SD, as.numeric), .SDcols = 1:176]
+data <- SetClassData(data)
+library(foreign)
+cb_p2 <- read.csv("BCAC_Extended_Data_Dictionary.csv", header = TRUE, sep = ";", stringsAsFactors = FALSE)
+?read.csv
+desc <- cb_p2$Label
+desc <- c("BCAC unique person identifier", "BCAC acronym for study", desc)
+desc <- append(desc[-(30:38)], desc[30:38], after = 23)
+desc <- append(desc, c("Description of TNM code of first tumor", "Description of TNM code of second tumor"), after = 32 )
+desc <- append(desc[-(41:43)], desc[41:43], after = 34)
+desc <- append(desc[-(41:43)], desc[41:43], after = 37)
+desc <- append(desc, c("Ariol Measurement of ER intensity", "Ariol Measurement of ER Percentage"), after = 49)
+desc <- append(desc, c("Ariol Measurement of PR intensity", "Ariol Measurement of PR Percentage"), after = 57)
+desc <- append(desc, "Ariol HER2 Score", after = 65)
+desc <- append(desc, c("EGFR Intensity Derived", "EGFR Proportion Derived", "EGFR Percentage"), after = 72)
+desc <- c(desc, c("CK5/6 Intensity Derived", "CK5/6 Proportion Derived", "CK5/6 Percentage"))
 
-f_colnames <- quote(readRDS("f_colnames.RData"))
-o_colnames <- quote(readRDS("o_colnames.RData"))
+x <- readClipboard()
+desc <- c(desc, x)
+length(desc)
 
-data_test[, eval(f_colnames) := lapply(.SD, as.factor), .SDcols = eval(f_colnames)]
-data_test[, eval(ordered_cols) := lapply(.SD, as.ordered), .SDcols = eval(ordered_cols)]
+as.data.frame(desc)
+as.data.frame(names(data))
 
+#saveRDS(desc, "VariableDescriptionsforCodebook.RData")
+description(data) <- desc
+?ifelse
+summary(data)
+data_ds <- data.set(data)
 
-data <- data_test
-saveRDS(data_test, "working.data.table.RData")
+for(i in ncol(data_ds)){
+  description(data_ds[, i]) <- desc[i]
+}
+description(data_ds[, 1]) <- desc[1]
+test <- data_ds[, 147]
+labels(test) <- c("No Bilaterality" = 0,
+                 "Contralateral" = 1,
+                 "Ipsilateral" = 2)
 
+description(test) <- desc[147]
+test
 
-
+test2 <- data_ds[, 148]
+description(test2) <- desc[148]
+length(data_ds)
+length(desc)
+class(data_ds)
+class(data)
