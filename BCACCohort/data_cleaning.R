@@ -17,18 +17,24 @@ SetToNA = function(data){
 # generated, however in order to preserve the integrity of the data for the
 # future, they are now loaded from RData files generated as shown.
 
-# factor_cols <- quote(c(2:20, 21:23, 33:37, 41:49, 52:57, 60, 61:65, 67:72,
+# factor_cols <- c(2:20, 21:23, 33:37, 41:49, 52:57, 60, 61:65, 67:72,
 # 76:80, 81, 85:88, 91, 93:99, 101:104, 106, 108, 110, 112, 114, 116:120,
 # 121:124, 127, 129:135, 137, 141, 147, 153, 155, 157, 159, 161, 164:167,
-# 169:170, 172, 175:176))
+# 169:170, 172, 175:176)
 
-#ordered_cols <- quote(c(27:32, 66, 73, 74, 82:83, 136, 139:140, 143:146))
+#ordered_cols <- c(27:32, 66, 73, 74, 82:83, 136, 139:140, 143:146)
+#date_cols <- which(data[, lapply(.SD, class), ] == "POSIXt", arr.ind = TRUE)[, 2]
 
-#f_colnames <- colnames(data_test[, eval(factor_cols), with = FALSE])
+
+
+#f_colnames <- colnames(data[, eval(factor_cols), with = FALSE])
 #saveRDS(f_colnames, "f_colnames.RData")
 
-# o_colnames <- colnames(data_test[, eval(factor_cols), with = FALSE])
+# o_colnames <- colnames(data[, eval(ordered_cols), with = FALSE])
 # saveRDS(o_colnames, "o_colnames.RData")
+
+# d_colnames <- colnames(data[, eval(date_cols), with = FALSE])
+# saveRDS(d_colnames, "d_colnames.RData")
 
 SetClassData <- function(data){
   setwd("~/RScripts") # To set it to where the names are stored
@@ -37,10 +43,12 @@ SetClassData <- function(data){
   
   data[, eval(f_colnames) := lapply(.SD, as.factor), .SDcols = eval(f_colnames)]
   data[, eval(o_colnames) := lapply(.SD, as.ordered), .SDcols = eval(o_colnames)]
-  
-  data
+  data[, eval(d_colnames) := lapply(.SD, as.IDate), .SDcols = eval(d_colnames)]
   
 }
+
+
+
 data[, 1:176 := lapply(.SD, as.numeric), .SDcols = 1:176]
 data <- SetClassData(data)
 library(foreign)
@@ -65,27 +73,47 @@ length(desc)
 as.data.frame(desc)
 as.data.frame(names(data))
 
-#saveRDS(desc, "VariableDescriptionsforCodebook.RData")
-description(data) <- desc
-?ifelse
-summary(data)
-data_ds <- data.set(data)
+# saveRDS(desc, "VariableDescriptionsforCodebook.RData")
+# desc <- readRDS("VariableDescriptionsforCodebook.Rdata")
 
-for(i in ncol(data_ds)){
-  description(data_ds[, i]) <- desc[i]
-}
-description(data_ds[, 1]) <- desc[1]
-test <- data_ds[, 147]
-labels(test) <- c("No Bilaterality" = 0,
-                 "Contralateral" = 1,
-                 "Ipsilateral" = 2)
+#desc2 <- desc[-date_cols]
+#saveRDS(desc2, "VariableDescriptionsforCodebook-nodates.RData")
 
-description(test) <- desc[147]
-test
+data_ds <- data[, !d_colnames, with = FALSE]
+data_ds <- data.set(data_ds)
 
-test2 <- data_ds[, 148]
-description(test2) <- desc[148]
-length(data_ds)
-length(desc)
-class(data_ds)
-class(data)
+  
+for (i in seq_along(desc2) ) description(data_ds[[i]]) <- desc2[i]
+
+?labels
+
+data[, lapply(.SD, class)]
+
+str(data_ds)
+
+c_no_lab           <- c(1)
+c_difficult_lab    <- c(2)
+c_binary_lab       <- c()
+c_binary_lab_777   <- c()
+c_grade_lab        <- c(8, 10)
+c_grade_lab        <- c(9)
+c_index_lab        <- c(3)
+c_index_lab_777    <- c(4)
+c_behavior_lab     <- c(5,)
+c_behavior_lab_777 <- c(6, 7)
+
+binary_lab = c("Absent" = 0, "Present" = 1, "Don't Know" = 888)
+binary_lab_777 = c("Absent" = 0, "Present" = 1, "Not Applicable" = 777, "Don't know" = 888)
+index_lab = c("Ascertained for first tumor" = 1, "Ascertained for second tumor" = 2,"Don't know" = 888)
+behavior_lab = c("Invasive" = 1, "In-situ" = 2, "Don't know" = 888)
+behavior_lab_777 = c("Invasive" = 1, "In-situ" = 2, "Not Applicable" = 777, "Don't know" = 888)
+grade_lab = c("Well-differentiated" = 1, "Moderately differentiated" = 2, "Poorly/un-differentiated" = 3, "Don't Know" = 888)
+grade_lab_777 = c("Well-differentiated" = 1, "Moderately differentiated" = 2, "Poorly/un-differentiated" = 3, "Not Applicable" = 777, "Don't Know" = 888)
+
+labels(data_ds[[3]]) <- index_lab
+labels(data_ds[[4]]) <- index_lab_777
+labels(data_ds[[5]]) <- behavior_lab
+
+summary(data_ds$data_ds.Grade2)
+
+summary(data_ds$data_ds.Grade1)

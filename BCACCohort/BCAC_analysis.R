@@ -11,7 +11,7 @@ library(nnet)
 install.packages("mtable")
 install.packages("mtable", repos="http://R-Forge.R-project.org", dependencies = TRUE)
 library(codebooks)
-detach("package:codebooks")
+detach("package:Hmisc")
 library(memisc)
 install.packages("codebooks", "")
 detach("package:memisc")
@@ -40,8 +40,8 @@ summary(data)
 # saveRDS(data, "working.data.table.RData")
 
 data <- data.table(readRDS("working.data.table.Rdata"))
-
-
+summary(data)
+test.data.table(data, verbose = TRUE)
 
 ################### Getting summary statistics #####################
 summary(data) 
@@ -139,4 +139,6 @@ data$YearsToRelapse
 
 
 data_test[, sum(!is.na(ER_status1)) / (sum(!is.na(ER_status1)) + sum(is.na(ER_status1))), by = study]
+
+
 
