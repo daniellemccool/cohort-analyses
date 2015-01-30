@@ -47,6 +47,8 @@ test.data.table(data, verbose = TRUE)
 summary(data) 
 summary(data$uniqueID)
 sum(duplicated(data$uniqueID))
+data[, sum(duplicated(uniqueID)), by = study]
+
 # 716 duplicates
 sum(!duplicated(data$uniqueID))
 # 184396 non-duplicated patients
@@ -120,7 +122,6 @@ sum(data$Bilateral == 1, na.rm = TRUE)
 sum(data$Bilateral == 2, na.rm = TRUE)
 sum(data$Behaviour2 %in% c(1, 2))
 
-
 # So in theory all these people had contralateral breast cancer, but there are quite a lot scored with
 # no second tumor or don't know. ABCS is the worst offender
 ggplot(data = data[data$Bilateral == 1, ], aes(x = study, fill = factor(Behaviour2))) +
@@ -140,5 +141,6 @@ data$YearsToRelapse
 
 data_test[, sum(!is.na(ER_status1)) / (sum(!is.na(ER_status1)) + sum(is.na(ER_status1))), by = study]
 
-
+### Data Frame - What is Where? for which studies have which features
+wiw
 

@@ -26,7 +26,7 @@ SetToNA = function(data){
 #date_cols <- which(data[, lapply(.SD, class), ] == "POSIXt", arr.ind = TRUE)[, 2]
 
 
-
+sum(is.na(wiw))
 #f_colnames <- colnames(data[, eval(factor_cols), with = FALSE])
 #saveRDS(f_colnames, "f_colnames.RData")
 
@@ -40,6 +40,7 @@ SetClassData <- function(data){
   setwd("~/RScripts") # To set it to where the names are stored
   f_colnames <- quote(readRDS("f_colnames.RData"))
   o_colnames <- quote(readRDS("o_colnames.RData"))
+  d_colnames <- quote(readRDS("d_colnames.RData"))
   
   data[, eval(f_colnames) := lapply(.SD, as.factor), .SDcols = eval(f_colnames)]
   data[, eval(o_colnames) := lapply(.SD, as.ordered), .SDcols = eval(o_colnames)]
@@ -117,3 +118,63 @@ labels(data_ds[[5]]) <- behavior_lab
 summary(data_ds$data_ds.Grade2)
 
 summary(data_ds$data_ds.Grade1)
+
+str(data)
+str(pheno_361)
+
+dim(data[pheno_361])
+
+dim(data)
+dim(pheno_361)
+### Combining with peno_361
+
+pheno_361 <- data.table(pheno_361)
+nrow(pheno_361)
+nrow(data)
+setkey(pheno_361, uniqueID)
+setkey(data, uniqueID)
+
+ll <- list(data, pheno_361)
+vals <- unique(c(data$uniqueID, pheno_361$uniqueID))
+data <- unique(data)
+
+nrow(length(vals))
+nrow(pheno_361)
+nrow(unique(data))
+
+in_risk_factor <- pheno_361[(pheno_361$uniqueID %nin% data$uniqueID)]
+
+in_risk_factor[, status]
+in_risk_factor
+data$uniqueID == "ABCS-F2161"
+
+print(pheno_361[eval(in_risk_factor), "study", with = FALSE], nrow = 178)
+
+
+
+sum(data$uniqueID %nin% pheno_361$uniqueID)
+pheno_361$uniqueID[6999]
+pheno_361["ABCS-F2161"]
+data[pheno_361[]]
+pheno_361[data[]]
+vals
+
+unique_keys <- unique(c(data[, uniqueID], pheno_361[, uniqueID]))
+data[pheno_361[(J(unique_keys))]]
+pheno_361[pheno_361 == 888] <- NA
+pheno_361$study <- as.factor(pheno_361$study)
+
+data2 <- merge(as.data.frame(data), as.data.frame(pheno_361), all = TRUE)
+
+saveRDS(data, "data.RData")
+saveRDS(pheno_361, "pheno_361.RData")
+
+data <- readRDS("data.Rdata")
+pheno_361 <- readRDS("pheno_361.Rdata")
+
+
+nrow(data2)
+which(is.na(data2$study.x))
+
+str(data2)
+
