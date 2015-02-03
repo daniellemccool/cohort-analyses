@@ -1,0 +1,644 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"SearchBoard",
+				"SearchBoard_rec"
+			],
+			[
+				"Search",
+				"SearchBoard_rec"
+			],
+			[
+				"Add",
+				"AddNewToOpen"
+			],
+			[
+				"start",
+				"starting_pos"
+			],
+			[
+				"To",
+				"ToOneIndexed"
+			],
+			[
+				"remove",
+				"RemoveImpossible"
+			],
+			[
+				"to",
+				"ToOneIndexed"
+			],
+			[
+				"one",
+				"OneIndexed"
+			],
+			[
+				"Setu",
+				"SetupGame"
+			],
+			[
+				"initial",
+				"initialGameState"
+			],
+			[
+				"initia",
+				"initialGameState"
+			],
+			[
+				"from",
+				"fromJSON"
+			],
+			[
+				"C_",
+				"C_Rtx_BC1"
+			],
+			[
+				"n",
+				"n_dot_t"
+			],
+			[
+				"sum",
+				"sum_over_m"
+			],
+			[
+				"N",
+				"NHatTable"
+			],
+			[
+				"Display",
+				"DisplayEmpiricalOutput"
+			],
+			[
+				"getDev",
+				"getDevianceResiduals"
+			],
+			[
+				"Coe",
+				"coefTable"
+			],
+			[
+				"aant",
+				"aantalregistraties_totaal"
+			],
+			[
+				"West",
+				"WestEuropa"
+			],
+			[
+				"lo",
+				"long_form_matrix"
+			],
+			[
+				"dete",
+				"detention_length"
+			],
+			[
+				"da",
+				"days_out"
+			],
+			[
+				"e",
+				"event_code"
+			],
+			[
+				"num",
+				"num_events"
+			],
+			[
+				"de",
+				"detention_length"
+			],
+			[
+				"W",
+				"WestEuropa"
+			],
+			[
+				"R",
+				"REGIO"
+			],
+			[
+				"regio",
+				"REGIO"
+			],
+			[
+				"dag",
+				"dagen_detentie_totaal"
+			],
+			[
+				"dage",
+				"dagen_expelled"
+			],
+			[
+				"dagen",
+				"dagen_uitpopulatie"
+			],
+			[
+				"dagen_",
+				"dagen_expelled"
+			],
+			[
+				"nation",
+				"nationaliteit"
+			],
+			[
+				"obs",
+				"obs_dag"
+			],
+			[
+				"Bar",
+				"BarTxTn"
+			],
+			[
+				"std",
+				"stdHT"
+			],
+			[
+				"t",
+				"t_M1"
+			],
+			[
+				"a",
+				"aantal"
+			],
+			[
+				"Nhat",
+				"Nhat"
+			],
+			[
+				"interval",
+				"interval2"
+			],
+			[
+				"in",
+				"interval"
+			],
+			[
+				"check",
+				"checklink"
+			],
+			[
+				"html",
+				"html	html"
+			],
+			[
+				"per",
+				"perch_get"
+			],
+			[
+				"perch",
+				"perch_content"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 306.0,
+		"selected_items":
+		[
+			[
+				"Package Control: disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"rep:r",
+				"SublimeREPL: R"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"r:",
+				"R: Choose Application"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: list",
+				"Package Control: List Packages"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"user",
+				"Preferences: Settings - User"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/danielle/R/cohort-analyses"
+	],
+	"file_history":
+	[
+		"/home/danielle/web/lobos.site/sites/www.louisbonapartesociety.nl/form_grandopening.html",
+		"/home/danielle/web/lobos.site/sites/www.louisbonapartesociety.nl/core/perch/templates/content/event_response.html",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Empirical Example Files/IllegalImmigrationEstimation.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Simulation Files/Simulation.Output.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Empirical Example Files/IllegalImmigrationOutput.R",
+		"/home/danielle/Dropbox/Internship/R/Potentially Useless R Code/Duplicating.Results.REM.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Simulation Files/SimulationFunctions.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Simulation Files/SimulationEstimations.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/BasicModel/LOGL.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Analysis Files/EstimationAndGoodnessofFit.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/HorwitzThompson.Goodness.Of.Fit.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/test/LOGL.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Empiral Example FIles/IllegalImmigrationOutput.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Real.Data.Analysis.No.Det.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Empiral Example FIles/IllegalImmigrationEstimation.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Empiral Example FIles/IllegalImmigrationDataSetup.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/test/ESTIMATEd2009sel.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/getEst2.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/BasicModel/ESTIMATE.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/NotSure.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive/Analysis Files/TvcMethods.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/BasicModel/SIMDATA.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/BasicModel/SIMCAT.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/CATEGORICAL.SIM.R",
+		"/home/danielle/.config/sublime-text-3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/home/danielle/.config/sublime-text-3/Packages/User/SublimeREPL.sublime-settings",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Test.R",
+		"/home/danielle/untitled.html",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Real.Data.Setup.TVC.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Real.Data.Setup.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/long.to.array_f.R",
+		"/tmp/fz3temp-1/config.php",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/BasicModel/Ideas for responding.txt",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Duplicating.Results.REM.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Comparing.Data.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/RWorkspaceThesis.sublime-project",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/RWorkspaceThesis.sublime-workspace",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/long.to.matrix_f.R",
+		"/home/danielle/Dropbox/Internship/R/tpr.tnbr.dv.R",
+		"/home/danielle/Dropbox/Internship/R/rem.R",
+		"/home/danielle/Dropbox/Internship/R/Recurrent.Events.Data.Setup.R",
+		"/home/danielle/Dropbox/Internship/R/REM.Data.Setup.New.Data.R",
+		"/home/danielle/Dropbox/NWO Onderzoekstalent/bestand2009/b2009.Data.Setup.R",
+		"/home/danielle/Dropbox/Internship/R/Recurrent.Events.Model.R",
+		"/home/danielle/Dropbox/Internship/R/Simulation.R",
+		"/home/danielle/Dropbox/rob.tex",
+		"/home/danielle/Dropbox/Internship/Population Estimate/R/minusloglik.flexsurv.R",
+		"/home/danielle/Dropbox/rob.r",
+		"/home/danielle/Dropbox/Internship/Population Estimate/R/TPR.TNBRa.TNBR.Optim.R",
+		"/home/danielle/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/danielle/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/danielle/Dropbox/Internship/Population Estimate/R/Estimate opiate.R",
+		"/home/danielle/Dropbox/R/Assignments/Workspace Assignment 1/Assignment1.R",
+		"/home/danielle/Dropbox/R/Assignments/Assignment2/McCool.Danielle.Assignment2Script.R",
+		"/home/danielle/Dropbox/Internship/Population Estimate/R/opiate.txt",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/members/forms/register.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/registration.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/host_reimbursement_form.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events_past.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/products.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/event.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/fellows-test.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/index.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/slide.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/highlights.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/_event_date_and_title.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/profile.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/product_detail.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/product_listing.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events_list.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events.html",
+		"/home/danielle/.config/sublime-text-3/Packages/Enhanced-R/Enhanced-R.sublime-settings",
+		"/home/danielle/Dropbox/Internship/Population Estimate/mccool-thesis.tex",
+		"/home/danielle/Dropbox/Internship/Population Estimate/mccool-thesis.pdf",
+		"/home/danielle/.config/sublime-text-3/Packages/User/bibtex.sublime-build",
+		"/tmp/fz3temp-1/class.discussionmodel.php",
+		"/tmp/fz3temp-1/configuration.php",
+		"/home/danielle/.config/sublime-text-3/Packages/LaTeXTools/Default (Linux).sublime-keymap",
+		"/home/danielle/.config/sublime-text-3/Packages/LaTeXTools/LaTeXTools Preferences.sublime-settings",
+		"/home/danielle/web/louisbonapartesociety.nl/public/yearbook.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events_past-old.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/contact.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/reimbursement.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/news.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/fellows.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/join.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/banner_and_nav.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/page_title.html",
+		"/home/danielle/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/danielle/web/louisbonapartesociety.nl/public/contact_form.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events-old.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/layouts/global.footer.php",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/layouts/global.header.php",
+		"/home/danielle/web/louisbonapartesociety.nl/public/forum/conf/config.php",
+		"/home/danielle/web/louisbonapartesociety.nl/public/form_circlemeeting.html",
+		"/home/danielle/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/agenda_widget.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events2.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/content/footer.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/templates/navigation/navmenu.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/.htaccess",
+		"/home/danielle/web/louisbonapartesociety.nl/public/form_no_circlemeeting.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/date-testing.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events-site.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/addons/apps/perch_news/templates/news/post-old.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/form_opening.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/news-test.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/fellows_test.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/events_past-site.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/addons/apps/perch_news/templates/news/lobos_post.html",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/perch/config/config.php",
+		"/home/danielle/Dropbox/Public/items.html",
+		"/home/danielle/dumps/Dump20130730.sql",
+		"/home/danielle/web/louisbonapartesociety.nl/public/core/js/main.js",
+		"/home/danielle/web/louisbonapartesociety.nl/Vagrantfile",
+		"/home/danielle/web/louisbonapartesociety.nl/public/news-old.html",
+		"/home/danielle/Documents/Backups/www.louisbonapartesociety.nl/news-test.html",
+		"/home/danielle/joostperch.html",
+		"/home/danielle/joostnoperch.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/home/danielle/Dropbox/NWO Onderzoekstalent/R code/Data Archive",
+			"/home/danielle/Dropbox",
+			"/home/danielle/web/louisbonapartesociety.nl/public",
+			"/home/danielle/web/louisbonapartesociety.nl",
+			"/home/danielle/web/louisbonapartesociety.nl/public",
+			"/home/danielle/web/louisbonapartesociety.nl/public/stuff",
+			"/home/danielle/web/louisbonapartesociety.nl/public/forum",
+			"/home/danielle/web/louisbonapartesociety.nl/public/core",
+			"/home/danielle/web/louisbonapartesociety.nl"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"leeftijd",
+			"C_Rtx",
+			"c_rtx",
+			"crt",
+			"rad",
+			"radio",
+			"ratio",
+			"Tcox",
+			"tcox",
+			"begindatum",
+			"T",
+			"tijd",
+			"time",
+			"sim.est.two",
+			"Model",
+			"nhat",
+			"fits",
+			"1",
+			"85",
+			"td.tab",
+			"tab",
+			"[1] 1",
+			"value",
+			"weather",
+			"vu",
+			"tvc.cols",
+			"regday",
+			"beta",
+			"abind",
+			"x.hat",
+			"XT",
+			"Time",
+			"XT.hat.2",
+			"XT.p",
+			"XT.hat",
+			"print",
+			"mxpo",
+			"pois",
+			",",
+			"mxtv",
+			"resBFGSHess",
+			",",
+			"REGIO.1",
+			"data$",
+			"data",
+			"minusloglik",
+			"minuslog",
+			"logl",
+			"actual",
+			"print",
+			"however",
+			"fit1",
+			"however",
+			"opia",
+			"d.datelast",
+			"no_circlemeeting",
+			"no_circle_meeting",
+			"one",
+			"Nijland",
+			"slug",
+			"_event_date_and_title",
+			"senaat",
+			"form_circlemeeting",
+			"10",
+			"title",
+			"clearfix",
+			"entry",
+			"</ul",
+			"column-grid",
+			"overlay",
+			"php",
+			"md269176db266730",
+			"iyS9QZ59",
+			"louisbonapartesociety_development"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "cohort-analyses.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"profile",
+				"core/perch/templates/content/profile.html"
+			],
+			[
+				"event_date",
+				"core/perch/templates/content/_event_date_and_title.html"
+			],
+			[
+				"event.",
+				"core/perch/templates/content/event.html"
+			],
+			[
+				"event.htm",
+				"core/perch/templates/content/event.html"
+			],
+			[
+				"event.html",
+				"core/perch/templates/content/event.html"
+			],
+			[
+				"prod",
+				"products.html"
+			],
+			[
+				"past",
+				"events_past.html"
+			],
+			[
+				"eventspa",
+				"events_past.html"
+			],
+			[
+				"event.ht",
+				"core/perch/templates/content/event.html"
+			],
+			[
+				"eventdate",
+				"core/perch/templates/content/_event_date_and_title.html"
+			],
+			[
+				"event",
+				"events.html"
+			],
+			[
+				"main.",
+				"public/core/js/main.js"
+			],
+			[
+				"vagra",
+				"Vagrantfile"
+			],
+			[
+				"perchconfig",
+				"public/core/perch/config/config.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 401.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 129.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -41,11 +41,11 @@ SetClassData <- function(data){
   f_colnames <- quote(readRDS("f_colnames.RData"))
   o_colnames <- quote(readRDS("o_colnames.RData"))
   d_colnames <- quote(readRDS("d_colnames.RData"))
-  
+
   data[, eval(f_colnames) := lapply(.SD, as.factor), .SDcols = eval(f_colnames)]
   data[, eval(o_colnames) := lapply(.SD, as.ordered), .SDcols = eval(o_colnames)]
   data[, eval(d_colnames) := lapply(.SD, as.IDate), .SDcols = eval(d_colnames)]
-  
+
 }
 
 
@@ -83,7 +83,7 @@ as.data.frame(names(data))
 data_ds <- data[, !d_colnames, with = FALSE]
 data_ds <- data.set(data_ds)
 
-  
+
 for (i in seq_along(desc2) ) description(data_ds[[i]]) <- desc2[i]
 
 ?labels
