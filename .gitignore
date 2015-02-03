@@ -12,3 +12,7 @@ working.data.table.RData
 *.mdb
 .ldb
 .mdb
+*.sublime-project
+*.sublime-workspace
+.sublime-project
+.sublime-workspace

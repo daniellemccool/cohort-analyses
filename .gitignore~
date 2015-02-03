@@ -8,3 +8,7 @@
 .RData
 working.data.table.RData
 .Rproj
+*.ldb
+*.mdb
+.ldb
+.mdb
