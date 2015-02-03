@@ -1,4 +1,10 @@
+*.Rproj.user
+*.Rhistory
+*.RData
+*working.data.table.RData
+*.Rproj
 .Rproj.user
 .Rhistory
 .RData
 working.data.table.RData
+.Rproj
